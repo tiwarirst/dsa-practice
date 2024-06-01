@@ -1,0 +1,51 @@
+//linear search
+#include<stdio.h>
+void linearsearch(int n,int a[],int k)
+{
+    int count=0;
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==k)
+        {
+            printf("\nelement found at index %d",i);
+            count++;
+        }
+    }
+    if(count==0)
+    {
+        printf("\nelement not present in given array.");
+    }
+}
+int main()
+{
+    int n,key;
+    printf("enter the size of array :");
+    scanf("%d",&n);
+    int a[n];
+    printf("\nenter the elements of the array: ");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+    }
+    printf("\nenter the elements you want to search ");
+    scanf("%d",&key);
+    linearsearch(n,a,key);
+    return 0;
+}
+
+//output
+// enter the size of array :5
+
+// enter the elements of the array: 3 4 2 5 1
+
+// 34251
+// enter the elements you want to search 8
+
+// element not present in given array.
+
+// === Code Execution Successful ===
