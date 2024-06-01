@@ -1,0 +1,166 @@
+//stack using array
+#include <stdio.h>
+#define max 5
+int a[max];
+int top=-1;
+void push(int d)
+{
+    if(top==max-1)
+    {
+        printf("stack is overflow");
+    }
+    else
+    {
+        top++;
+        a[top]=d;
+        printf("data is inserted");
+    }
+}
+void pop()
+{
+    if(top==-1)
+    {
+        printf("\nstack is underflow.");
+    }
+    else
+    {printf("\ndeleted element is :%d",a[top]);
+    top--;}
+}
+void peep()
+{ if(top==-1)
+    {
+        printf("\nempty stack.");
+    }
+    else
+    {
+        for(int i=0;i<=top;i++)
+        {
+            printf("%d\t",a[i]);
+        }
+    }
+}
+void peek()
+{
+   printf("\nthe top element is :%d the top element index is :%d",a[top],top); 
+}
+int main()
+{
+    int ch;
+    while(1)
+    {
+        printf("\nenter 1.push\n2.pop\n3.peep\n4.peek\n5.exit");
+        printf("\nenter your choice :");
+        scanf("%d",&ch);
+        if(ch==5)break;
+        switch(ch)
+        {
+            case 1:
+            int data;
+            printf("\nenter the data :");
+            scanf("%d",&data);
+            push(data);
+            break;
+            case 2:
+            pop();
+            break;
+            case 3:
+            peep();
+            break;
+            case 4:
+            peek();
+            break;
+            default:
+            printf("\nenter the valid choice.");
+            break;
+        }
+    }
+    
+    return 0;
+}
+//  output
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :1
+
+// enter the data :45
+// data is inserted
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :1
+
+// enter the data :67
+// data is inserted
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :1
+
+// enter the data :89
+// data is inserted
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :1
+
+// enter the data :897
+// data is inserted
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :1
+
+// enter the data :9870
+// data is inserted
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :1
+
+// enter the data :874
+// stack is overflow
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :3
+// 45	67	89	897	9870	
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :2
+
+// deleted element is :9870
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :4
+
+// the top element is :897 the top element index is :3
+// enter 1.push
+// 2.pop
+// 3.peep
+// 4.peek
+// 5.exit
+// enter your choice :5
+
+
+// === Code Execution Successful ===
