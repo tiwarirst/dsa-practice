@@ -1,0 +1,106 @@
+//stackk using linked list 
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+  int data;
+  struct node*next;
+};
+struct node*head=NULL;
+void push(int dt)
+{
+    struct node*ptr,*temp;
+    
+    ptr=(struct node*)malloc(sizeof(struct node));
+    if(ptr==NULL)
+    {
+        printf("\nstack is full.");
+    }
+    else
+    {
+        if(head==NULL)
+        {
+        ptr->data=dt;
+        ptr->next=NULL;
+        head=ptr;
+        }
+        else
+        {
+        temp=head;
+        ptr->data=dt;
+        ptr->next=NULL;
+        while(temp->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        temp->next=ptr;
+        }
+        printf("\nelement is inserted.");
+    }
+}
+void pop()
+{
+    struct node*temp,*temp1;
+    if(head==NULL)
+    {
+        printf("\nstack is empty.");
+    }
+    else
+    {
+        temp=head;
+        while(temp->next!=NULL)
+        {
+            temp1=temp;
+            temp=temp->next;
+        }
+        printf("\nelement is deleted %d",temp->data);
+        temp1->next=NULL;
+        free(temp);
+    }
+}
+void peep()
+{ struct node*temp;
+    temp=head;
+    if(temp==NULL)
+    {
+        printf("\nstack is empty.");
+    }
+    else
+   {
+        printf("\nelements of stack :");
+    while(temp!=NULL)
+    {
+         printf("%d\t",temp->data);
+        temp=temp->next;
+       
+        
+    }}
+}
+int main()
+{
+    int ch,data;
+while (1)
+{
+    printf("\n1.push\n2.pop\n3.peep\n4.exit");
+    printf("\n enter your choice :");
+    scanf("%d",&ch);
+    if(ch==4)break;
+    switch(ch)
+    {
+        case 1:
+        printf("\nenter the data :");
+        scanf("%d",&data);
+        push(data);
+        break;
+        case 2:
+        pop();
+        break;
+        case 3:
+        peep();
+        break;
+        default:
+        printf("enter the valid choice .");
+        break;
+    }
+}
+    return 0;
+}
